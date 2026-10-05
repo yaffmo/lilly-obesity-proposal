@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TMASO 身體少阻抗｜簡易互動版</title>
+<meta name="description" content="台灣肥胖醫學會 TMASO 肥胖自我檢視衛教頁：自我檢視 3 步驟、相關疾病、多項指標與 BMI 計算機。">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex">
+<link rel="preload" href="assets/fonts/lineseed-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lineseed-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ringside-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<style id="static-preview">
+/* 提案示意：關閉所有互動（點擊、滑過、輸入），只保留畫面 */
+body *{pointer-events:none!important;cursor:default!important;-webkit-user-select:none;user-select:none}
+html{scroll-behavior:auto!important}
+</style>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M4.5 12h14.5M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19.5 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4.5V19M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M10.029 6.61738C8.69594 5.81755 7 6.77778 7 8.33237V15.6676C7 17.2222 8.69594 18.1824 10.029 17.3826L16.1417 13.715C17.4364 12.9382 17.4364 11.0618 16.1417 10.285L10.029 6.61738Z" fill="currentColor"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5.5 12.5l4.2 4.2L18.5 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#main">跳到主要內容</a>
+
+<header class="hd" id="top">
+  <div class="hd-in">
+    <a class="hd-logo" href="#top" aria-label="回到頁首"><img src="assets/img/tmaso-logo.webp" alt="TMASO 台灣肥胖醫學會" width="173" height="38"></a>
+    <nav class="hd-nav" aria-label="主選單">
+      <a class="hd-link" href="#steps">自我檢視3步驟</a>
+      <a class="hd-link" href="#bmi">檢測BMI</a>
+      <a class="btn btn-o btn-s hd-help" href="#" data-todo="clinic">尋找專業協助</a>
+      <a class="btn btn-o btn-s hd-bmi" href="#bmi">檢測 BMI</a>
+    </nav>
+  </div>
+</header>
+
+
+<a class="fab" href="#" data-todo="clinic">
+  <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+  <span class="fab-t">尋找專業協助</span>
+</a>
+
+<main id="main">
+
+<section class="kv" id="kv" aria-label="主視覺">
+  <div class="kv-stage">
+    <div class="kv-art">
+      <picture class="kv-bg">
+        <source media="(max-width: 599px)" srcset="assets/img/kv-bg-m.webp">
+        <img src="assets/img/kv-bg-wide.webp" alt="" width="4051" height="1257" fetchpriority="high">
+      </picture>
+      <div class="kv-fg" id="kvfg">
+        <img src="assets/img/kv-fg.webp" alt="" width="1692" height="923" fetchpriority="high">
+      </div>
+      <h1 class="vh">身體少阻抗，減重不卡關</h1>
+      <div class="kv-cta">
+        <a class="kv-pill" href="#bmi"><span>立即檢測BMI</span><i class="kv-dot"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></i></a>
+        <p class="kv-sub">一起跨出認識身體的第一步</p>
+      </div>
+    </div>
+    <div class="otv" id="otv">
+      <button class="otv-card" type="button" data-todo="video" aria-label="播放影片">
+        <img src="assets/img/otv.webp" alt="" width="1600" height="900" loading="lazy">
+        <span class="otv-play"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="intro" aria-label="破題">
+  <div class="wrap intro-in">
+    <h2 class="intro-t split"><span class="ln"><span>明明控制飲食、<br class="br-m">增加運動，</span></span><span class="ln"><span><span class="ph">體重卻還是</span><span class="ph"><span class="bandword">卡關<i class="bandhl" aria-hidden="true"></i></span>？</span></span></span></h2>
+    <p class="intro-p">這可能不只是體重的問題——<br>肥胖正悄悄提高你罹患<em>慢性病的風險</em>。</p>
+  </div>
+</section>
+
+<section class="steps" id="steps" aria-labelledby="steps-t">
+  <div class="wrap">
+    <header class="sh">
+      <h2 class="sh-t split" id="steps-t"><span class="ln"><span>自我檢視 3 步驟</span></span></h2>
+    </header>
+    <div class="steps-box" id="stepsBox">
+      <a class="st is-on" href="#step1">
+        <span class="st-ph"><img src="assets/img/ov-1.webp" alt="" loading="lazy"></span>
+        <span class="st-num num">01</span>
+        <span class="st-bot">
+          <span class="st-txt"><span class="st-t">找出原因</span><span class="st-d"><span class="ph">這些狀況，</span><span class="ph">你是不是也遇過？</span></span></span>
+          <span class="st-go"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></span>
+        </span>
+      </a>
+      <a class="st" href="#step2">
+        <span class="st-ph"><img src="assets/img/ov-2.webp" alt="" loading="lazy"></span>
+        <span class="st-num num">02</span>
+        <span class="st-bot">
+          <span class="st-txt"><span class="st-t">看懂風險</span><span class="st-d"><span class="ph">這些警訊，</span><span class="ph">你是否也曾忽略？</span></span></span>
+          <span class="st-go"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></span>
+        </span>
+      </a>
+      <a class="st" href="#step3">
+        <span class="st-ph"><img src="assets/img/ov-3.webp" alt="" loading="lazy"></span>
+        <span class="st-num num">03</span>
+        <span class="st-bot">
+          <span class="st-txt"><span class="st-t"><span class="ph">了解</span><span class="ph">自己的狀況</span></span><span class="st-d"><span class="ph">體重管理，</span><span class="ph">不只是</span><span class="ph">體重計上的數字。</span></span></span>
+          <span class="st-go"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="s1" id="step1" aria-labelledby="s1-t">
+  <div class="s1-pin">
+    <div class="s1-sticky">
+      <div class="wrap">
+        <header class="sh sh-num">
+          <span class="sh-no num" aria-hidden="true">01</span>
+          <div class="sh-body">
+            <p class="sh-k">Step 1｜找出原因</p>
+            <h2 class="sh-t split" id="s1-t"><span class="ln"><span><span class="ph">這些狀況，</span><br class="br-m"><span class="ph">你是不是也遇過？</span></span></span></h2>
+          </div>
+        </header>
+      </div>
+      <div class="s1-track" id="track">
+        <div class="s1-rail" id="rail">
+          <figure class="c1 c1-ph"><img src="assets/img/s1-1.webp" alt="玻璃保鮮盒裡的雞胸肉與青菜" loading="lazy"></figure>
+          <div class="c1 c1-tx"><p><span class="ph">明明</span><span class="ph">控制飲食、</span><span class="ph">規律運動，</span><span class="ph">體重卻卡住不動</span></p><i></i></div>
+          <figure class="c1 c1-ph"><img src="assets/img/s1-2.webp" alt="扣孔有磨痕的皮帶" loading="lazy"></figure>
+          <div class="c1 c1-tx"><p><span class="ph">好不容易</span><span class="ph">瘦下來，</span><span class="ph">沒多久</span><span class="ph">又慢慢復胖</span></p><i></i></div>
+          <figure class="c1 c1-ph"><img src="assets/img/s1-3.webp" alt="吃完的空盤與叉子" loading="lazy"></figure>
+          <div class="c1 c1-tx"><p><span class="ph">比別人</span><span class="ph">更容易餓，</span><span class="ph">也更難有</span><span class="ph">「吃飽了」的感覺</span></p><i></i></div>
+          <figure class="c1 c1-ph"><img src="assets/img/s1-4.webp" alt="啞鈴與彈力帶" loading="lazy"></figure>
+          <div class="c1 c1-tx"><p><span class="ph">覺得好像</span><span class="ph">有一股力量，</span><span class="ph">在阻止你</span><span class="ph">瘦下來</span></p><i></i></div>
+        </div>
+      </div>
+      <div class="wrap s1-ctrl">
+        <button class="circ" id="prev" type="button" aria-label="上一張" aria-controls="track" disabled><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
+        <button class="circ" id="next" type="button" aria-label="下一張" aria-controls="track"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        <span class="s1-prog" aria-hidden="true"><i id="tprog"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="aha" id="aha">
+    <div class="wrap aha-in">
+      <p class="aha-lead">如果你也有以上幾項經驗——</p>
+      <div class="aha-stage" id="ahaStage">
+        <p class="aha-t split"><span class="ln"><span>這不是你</span></span><span class="ln"><span>不夠努力<span class="pd">。</span></span></span></p>
+        <svg class="aha-band" id="ahaBand" aria-hidden="true" focusable="false">
+          <g id="ahaBandG"></g>
+        </svg>
+      </div>
+      <p class="aha-r">肥胖其實是<span class="ph">一種慢性疾病，</span>身體對減重存在<span class="ph">天生的</span><u>「生理抗阻」</u>機制，會讓減重變得比想像中更難，而且很多人<span class="ph">正經歷一樣的事。</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="s2" id="step2" aria-labelledby="s2-t">
+  <div class="s2-pin">
+    <div class="s2-sticky">
+      <div class="wrap s2-grid">
+        <div class="s2-left">
+          <header class="sh sh-num">
+            <span class="sh-no num" aria-hidden="true">02</span>
+            <div class="sh-body">
+              <p class="sh-k">Step 2｜看懂風險</p>
+              <h2 class="sh-t split" id="s2-t"><span class="ln"><span>這些警訊，</span></span><span class="ln"><span>你是否也曾忽略？</span></span></h2>
+            </div>
+          </header>
+          <ol class="s2-list" id="s2list">
+            <li class="s2-item is-on"><p class="s2-idx"><span class="num">01</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">爬樓梯</span><span class="ph">容易喘、</span><span class="ph">心跳加快</span></p></li>
+            <li class="s2-item"><p class="s2-idx"><span class="num">02</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">睡覺時</span><span class="ph">容易打鼾，</span><span class="ph">或感覺</span><span class="ph">呼吸不順暢</span></p></li>
+            <li class="s2-item"><p class="s2-idx"><span class="num">03</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">睡醒後</span><span class="ph">仍然感覺疲倦，</span><span class="ph">白天精神不濟</span></p></li>
+            <li class="s2-item"><p class="s2-idx"><span class="num">04</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">關節（膝蓋、腰部）</span><span class="ph">常感到</span><span class="ph">疼痛或負擔</span></p></li>
+            <li class="s2-item"><p class="s2-idx"><span class="num">05</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">血壓或血脂數值</span><span class="ph">曾被醫師提醒</span><span class="ph">需要留意</span></p></li>
+            <li class="s2-item"><p class="s2-idx"><span class="num">06</span><span class="of">/ 06</span></p><p class="s2-txt"><span class="ph">家族中有</span><span class="ph">糖尿病或</span><span class="ph">心血管疾病病史</span></p></li>
+          </ol>
+          <div class="s2-ctrl">
+            <button class="circ" id="s2prev" type="button" aria-label="上一則警訊" aria-controls="s2list" disabled><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
+            <button class="circ" id="s2next" type="button" aria-label="下一則警訊" aria-controls="s2list"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+            <span class="s2-prog" id="s2prog" aria-hidden="true"><i id="s2fill"></i></span>
+          </div>
+        </div>
+        <div class="s2-photos">
+          <figure class="s2-ph is-on"><img src="assets/img/s2-1.webp" alt="白色樓梯與扶手" loading="lazy"></figure>
+          <figure class="s2-ph"><img src="assets/img/s2-2.webp" alt="" loading="lazy"></figure>
+          <figure class="s2-ph"><img src="assets/img/s2-3.webp" alt="" loading="lazy"></figure>
+          <figure class="s2-ph"><img src="assets/img/s2-4.webp" alt="" loading="lazy"></figure>
+          <figure class="s2-ph"><img src="assets/img/s2-5.webp" alt="" loading="lazy"></figure>
+          <figure class="s2-ph"><img src="assets/img/s2-6.webp" alt="" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dz" id="dzsec" aria-labelledby="dz-t">
+  <div class="wrap dz-grid">
+    <div class="dz-intro">
+      <h2 class="sh-t split" id="dz-t"><span class="ln"><span><span class="ph">這些看似平常的</span><span class="ph">小狀況，</span></span></span><span class="ln"><span><span class="ph">可能都跟</span><span class="ph">體重有關。</span></span></span></h2>
+      <p>肥胖與以下疾病風險相關，<span class="ph">及早留意，</span><span class="ph">才能及早調整。</span></p>
+    </div>
+    <ul class="dz-list" id="dz">
+      <li><span class="dz-name"><i></i>第二型糖尿病</span><span class="dz-cat">代謝</span></li>
+      <li><span class="dz-name"><i></i>睡眠呼吸中止症</span><span class="dz-cat">呼吸</span></li>
+      <li><span class="dz-name"><i></i>高血壓</span><span class="dz-cat">心血管</span></li>
+      <li><span class="dz-name"><i></i>心衰竭</span><span class="dz-cat">心血管</span></li>
+      <li><span class="dz-name"><i></i>氣喘</span><span class="dz-cat">呼吸</span></li>
+      <li><span class="dz-name"><i></i>骨關節炎</span><span class="dz-cat">骨骼關節</span></li>
+      <li><span class="dz-name"><i></i>慢性腎臟病</span><span class="dz-cat">腎臟</span></li>
+      <li><span class="dz-name"><i></i>多種癌症</span><span class="dz-cat">腫瘤</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="s3" id="step3" aria-labelledby="s3-t">
+  <div class="wrap">
+    <header class="sh sh-num">
+      <span class="sh-no num" aria-hidden="true">03</span>
+      <div class="sh-body">
+        <p class="sh-k">Step 3｜了解自己的狀況</p>
+        <h2 class="sh-t split" id="s3-t"><span class="ln"><span>體重管理，</span></span><span class="ln"><span><span class="ph">不只是</span><span class="ph">體重計上的數字。</span></span></span></h2>
+        <p class="sh-sub"><span class="ph">把多項指標放在一起，</span><br class="br-m"><span class="ph">才能看懂</span><span class="ph">身體的真實狀態。</span></p>
+      </div>
+    </header>
+    <div class="s3-cards" id="s3cards">
+      <article class="ind is-on" tabindex="0">
+        <figure class="ind-ph"><img src="assets/img/s3-1.webp" alt="" loading="lazy"></figure>
+        <div class="ind-top">
+          <h3 class="ind-t">BMI</h3>
+          <p class="ind-role">第一線篩檢工具</p>
+          <div class="ind-desc"><p><span class="ph">以身高和體重計算的</span><span class="ph">初步體位指標。</span><span class="ph">台灣成人標準：</span><span class="ph">過輕 &lt; 18.5；</span><span class="ph">健康體重 18.5–23.9；</span><span class="ph">過重 24–26.9；</span><span class="ph">肥胖 <span class="sym-f">≥</span> 27</span><span class="ph">（TMASO</span><span class="ph">台灣成人肥胖</span><span class="ph">臨床實證指引）</span></p></div>
+        </div>
+        <div class="ind-bot">
+          <p class="ind-num"><span class="pre">≥</span><span class="big num">27</span><span class="unit">kg/m²</span></p>
+          <p class="ind-cap">BMI <span class="sym-f">≥</span> 27 為肥胖</p>
+        </div>
+      </article>
+      <article class="ind" tabindex="0">
+        <figure class="ind-ph"><img src="assets/img/s3-2.webp" alt="" loading="lazy"></figure>
+        <div class="ind-top">
+          <h3 class="ind-t">腰圍</h3>
+          <p class="ind-role">腹部肥胖指標</p>
+          <div class="ind-desc"><p>反映腹部脂肪堆積程度。</p></div>
+        </div>
+        <div class="ind-bot">
+          <p class="ind-num"><span class="big num">90</span><span class="unit">/ 80 cm</span></p>
+          <p class="ind-cap"><span class="ph">男性 <span class="sym-f">≥</span> 90 公分、</span><span class="ph">女性 <span class="sym-f">≥</span> 80 公分，</span><span class="ph">即為腹部肥胖</span></p>
+        </div>
+      </article>
+      <article class="ind" tabindex="0">
+        <figure class="ind-ph"><img src="assets/img/s3-3.webp" alt="" loading="lazy"></figure>
+        <div class="ind-top">
+          <h3 class="ind-t"><span class="ph">腰臀比 (WHR)</span><br><span class="ph">/ 腰高比 (WHtR)</span></h3>
+          <p class="ind-role">反映內臟脂肪</p>
+          <div class="ind-desc"><p><span class="ph">評估體脂肪分布，</span><span class="ph">內臟脂肪較高者</span><span class="ph">代謝風險也較高。</span></p></div>
+        </div>
+        <div class="ind-bot">
+          <p class="ind-num"><span class="pre">&gt;</span><span class="big num">0.5</span></p>
+          <p class="ind-cap"><span class="ph">WHtR &gt; 0.5，</span><span class="ph">與較高的</span><span class="ph">心血管代謝風險有關</span></p>
+        </div>
+      </article>
+      <article class="ind" tabindex="0">
+        <figure class="ind-ph"><img src="assets/img/s3-4.webp" alt="" loading="lazy"></figure>
+        <div class="ind-top">
+          <h3 class="ind-t">體脂率</h3>
+          <p class="ind-role">直接反映脂肪總量</p>
+          <div class="ind-desc"><p><span class="ph">無論 BMI 是否達標，</span><span class="ph">都應納入肥胖評估。</span></p></div>
+        </div>
+        <div class="ind-bot">
+          <p class="ind-num"><span class="big num">25</span><span class="unit">/ 35 %</span></p>
+          <p class="ind-cap"><span class="ph">男性 &gt; 25%、</span><span class="ph">女性 &gt; 35%，</span><span class="ph">即可視為脂肪過多</span></p>
+        </div>
+      </article>
+    </div>
+    <div class="s3-foot">
+      <p class="s3-note"><span class="ph">單一指標難以</span><span class="ph">完整反映</span><span class="ph">脂肪分布與代謝風險，</span><span class="ph">僅憑 BMI 診斷，</span><span class="ph">可能低估</span><span class="ph">部分高體脂率個案的</span><span class="ph">代謝風險。</span><span class="ph">臨床上應結合</span><span class="ph">多項工具評估，</span>以提高<span class="ph">辨識度與準確性。</span></p>
+      <div class="s3-cta">
+        <p><span class="ph">BMI 是第一線篩檢工具，</span><span class="ph">花 1 分鐘</span><span class="ph">計算你的 BMI，</span><span class="ph">作為了解</span><span class="ph">自己狀況的第一步。</span></p>
+        <a class="btn btn-f btn-xl" href="#bmi">立即檢測 BMI<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bmi" id="bmi" aria-labelledby="bmi-t">
+  <div class="wrap">
+    <header class="sh bmi-h">
+      <h2 class="sh-t split" id="bmi-t"><span class="ln"><span>BMI 計算機</span></span></h2>
+      <p class="sh-sub">BMI 是根據您的體重與身高計算，較高的 BMI 可能是提醒您與醫師討論體重健康狀況的<span class="ph">重要指標之一。</span>BMI 計算機<span class="ph">僅供參考，</span><span class="ph">並非診斷工具。</span></p>
+    </header>
+    <div class="acc" id="acc">
+
+      <div class="panel is-open" data-panel="1">
+        <button class="bar" type="button" data-go="1" aria-controls="card1">
+          <span class="bar-l"><span class="bar-n">01</span><span class="bar-t">輸入身高體重</span></span><span class="bar-r"></span>
+        </button>
+        <form class="card" id="card1" novalidate>
+          <div class="card-h">
+            <p class="stepno"><b>01</b> / 03</p>
+            <h3 class="card-t">輸入身高體重</h3>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label for="bmi-h">身高</label>
+              <div class="box"><input id="bmi-h" name="h" type="text" inputmode="decimal" autocomplete="off" placeholder="例如 165" aria-describedby="err"><span>公分</span></div>
+            </div>
+            <div class="field">
+              <label for="bmi-w">體重</label>
+              <div class="box"><input id="bmi-w" name="w" type="text" inputmode="decimal" autocomplete="off" placeholder="例如 68" aria-describedby="err"><span>公斤</span></div>
+            </div>
+          </div>
+          <p class="err" id="err" role="alert" hidden></p>
+          <button class="btn btn-f btn-l" type="submit">繼續下一步<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </form>
+      </div>
+
+      <div class="panel is-locked" data-panel="2">
+        <button class="bar" type="button" data-go="2" aria-controls="card2" disabled>
+          <span class="bar-l"><span class="bar-n">02</span><span class="bar-t">快速自我檢視</span></span><span class="bar-r">完成上一步後開啟</span>
+        </button>
+        <div class="card" id="card2">
+          <div class="card-h">
+            <p class="stepno"><b>02</b> / 03</p>
+            <h3 class="card-t">快速自我檢視</h3>
+            <p class="card-d">肥胖症可能影響的不只是體重——與多種共病相關。以下情況是否符合您的狀況？（複選）</p>
+          </div>
+          <fieldset class="chips" id="chips">
+            <legend class="vh">勾選符合您的狀況（複選）</legend>
+            <label class="chip"><input type="checkbox" value="0"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>曾被告知有血糖偏高、糖尿病前期或第二型糖尿病</span></label>
+            <label class="chip"><input type="checkbox" value="1"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>關節疼痛，影響日常活動或行動能力</span></label>
+            <label class="chip"><input type="checkbox" value="2"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>曾被診斷有睡眠呼吸中止症，或睡眠時容易出現呼吸困難</span></label>
+            <label class="chip"><input type="checkbox" value="3"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>經常感到疲倦、缺乏活力或精神不佳</span></label>
+            <label class="chip"><input type="checkbox" value="4"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>曾發生心肌梗塞或中風</span></label>
+            <label class="chip"><input type="checkbox" value="5"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>正在接受高血壓或高膽固醇相關治療</span></label>
+            <label class="chip"><input type="checkbox" value="6"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>曾被告知有脂肪肝</span></label>
+            <label class="chip"><input type="checkbox" value="7"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>長期受到憂鬱、焦慮或自我價值感低落等情緒困擾</span></label>
+            <label class="chip"><input type="checkbox" value="8"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>曾因血糖、糖尿病前期或高血壓接受相關檢查或追蹤</span></label>
+            <label class="chip"><input type="checkbox" value="9"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>家族中有心血管疾病病史</span></label>
+            <label class="chip chip-none"><input type="checkbox" value="none" id="none"><i class="chip-box"><svg aria-hidden="true"><use href="#i-check"/></svg></i><span>以上皆無</span></label>
+          </fieldset>
+          <div><button class="btn btn-f" type="button" id="toResult">查看我的結果<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button></div>
+        </div>
+      </div>
+
+      <div class="panel is-locked" data-panel="3">
+        <button class="bar" type="button" data-go="3" aria-controls="card3" disabled>
+          <span class="bar-l"><span class="bar-n">03</span><span class="bar-t">我的結果</span></span><span class="bar-r">完成上一步後開啟</span>
+        </button>
+        <div class="card card-res" id="card3" aria-live="polite">
+          <div class="res-l">
+            <div class="card-h">
+              <p class="stepno"><b>03</b> / 03</p>
+              <h3 class="card-t"><span class="ph">諮詢專業醫師，</span><br class="br-m"><span class="ph">討論專屬您的</span><span class="ph">健康處方！</span></h3>
+            </div>
+            <div class="res-row">
+              <p class="res-bmi"><span class="num" id="rBmi">0.0</span><span class="res-u">kg/m²</span></p>
+              <p class="res-pill-w"><span class="res-pill" id="rCat">—</span></p>
+            </div>
+            <p class="res-s" id="rSent"></p>
+            <div class="scale" id="scale">
+              <div class="scale-segs" id="segs"><i style="--w:17.5"></i><i style="--w:27.5"></i><i style="--w:15"></i><i style="--w:40"></i></div>
+              <span class="scale-mk" id="mk"></span>
+              <div class="scale-lbl">
+                <span style="--w:17.5">過輕<br>&lt; 18.5</span>
+                <span style="--w:27.5">健康體重<br>18.5–23.9</span>
+                <span style="--w:15">過重<br>24–26.9</span>
+                <span style="--w:40">肥胖<br><span class="sym-f">≥</span> 27</span>
+              </div>
+            </div>
+            <button class="link" type="button" data-go="1">重新計算</button>
+          </div>
+          <div class="res-r">
+            <div class="res-blk">
+              <h4 class="res-h">自我檢視近況</h4>
+              <ul class="res-list" id="picked"></ul>
+            </div>
+            <div class="res-blk res-box">
+              <p>下載自我評估結果，幫助您更有效率地與醫師溝通，共同找出適合您的體重管理方式。</p>
+              <div><button class="btn btn-o" type="button" data-todo="download">下載自我評估結果</button></div>
+            </div>
+            <div class="res-blk res-box">
+              <p>準備好與醫師討論了嗎？您可以透過以下管道，找到適合的醫療院所：</p>
+              <div><a class="btn btn-f" href="#" data-todo="clinic">諮詢專業醫師<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <img class="ft-logo" src="assets/img/tmaso-logo.webp" alt="TMASO 台灣肥胖醫學會" width="201" height="44" loading="lazy">
+    <ul class="ft-links">
+      <li><a href="#" data-todo="link">隱私權政策</a></li>
+      <li><a href="#" data-todo="link">網站使用條款</a></li>
+      <li>審核編號 待提供</li>
+      <li>© 2026 台灣肥胖醫學會</li>
+    </ul>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/js/main.js"></script>
+<script>
+/* 提案示意：移除鍵盤焦點與輸入 */
+document.querySelectorAll('a,button,input,select,textarea,label,[tabindex]').forEach(function(el){el.setAttribute('tabindex','-1');if('readOnly' in el)el.readOnly=true;});
+document.querySelectorAll('a[href]').forEach(function(el){el.removeAttribute('href');});
+document.addEventListener('keydown',function(e){if(/^(Tab|Enter| )$/.test(e.key))e.preventDefault();},true);
+</script>
+</body>
+</html>
