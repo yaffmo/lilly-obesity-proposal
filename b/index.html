@@ -1489,6 +1489,19 @@ html{scroll-behavior:auto!important}
 })();
 </script>
 <script>
+/* 提案示意：BMI 計算機直接展示「我的結果」（範例：身高 165、體重 80） */
+(function(){
+  var noScroll=function(){}; window.scrollTo=window.scrollBy=noScroll; Element.prototype.scrollIntoView=noScroll;
+  var fire=function(el,t){el.dispatchEvent(new Event(t,{bubbles:true,cancelable:true}));};
+  document.getElementById('h').value='165'; document.getElementById('w').value='80';
+  document.getElementById('toP2').click();
+  var checks=document.querySelectorAll('#checks input');
+  [0,2,4].forEach(function(i){checks[i].checked=true; fire(checks[i],'change');});
+  fire(document.getElementById('bmiForm'),'submit');
+  if(document.activeElement) document.activeElement.blur();
+})();
+</script>
+<script>
 /* 提案示意：移除鍵盤焦點與輸入 */
 document.querySelectorAll('a,button,input,select,textarea,label,[tabindex]').forEach(function(el){el.setAttribute('tabindex','-1');if('readOnly' in el)el.readOnly=true;});
 document.querySelectorAll('a[href]').forEach(function(el){el.removeAttribute('href');});
